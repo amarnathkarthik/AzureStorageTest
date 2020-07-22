@@ -14,6 +14,13 @@ conf.set("fs.azure.account.oauth2.client.id", "REPLACE_APP_CLIENT_ID");
 conf.set("fs.azure.account.oauth2.client.secret", "REPLACE_APP_CLIENT_SECRET");
 ``` 
 
+# Replace Azure Tenent ID
+
+```
+/** Replace Tenant ID **/
+conf.set("fs.azure.account.oauth2.client.endpoint", "https://login.microsoftonline.com/<REPLACE_TENANT_ID>/oauth2/token");
+```
+
 # Generate executable Jar
 Executable jar file will be generated and available under build/libs
 ```

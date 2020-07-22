@@ -22,8 +22,9 @@ public class AdslGen2Test {
     conf.set("fs.azure.account.oauth2.client.id", "REPLACE_APP_CLIENT_ID");
     /** Replace Service Principals/App Client Secret **/
     conf.set("fs.azure.account.oauth2.client.secret", "REPLACE_APP_CLIENT_SECRET");
+    /** Replace Tenant ID **/
     conf.set("fs.azure.account.oauth2.client.endpoint",
-        "https://login.microsoftonline.com/658728e7-1632-412a-9815-fe53f53ec58b/oauth2/token");
+        "https://login.microsoftonline.com/<REPLACE_TENANT_ID>/oauth2/token");
 
     FileSystem fs = FileSystem.get(conf);
     Instant start = Instant.now();
