@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+}
+
+group 'org.azure.storage'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "org.azure.storage.AdslGen2Test"
+    }
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+}
+
+dependencies {
+    compile group: 'com.google.guava', name: 'guava', version: '19.0'
+    compile group: 'com.google.code.findbugs', name: 'jsr305', version: '3.0.2'
+    compile group: 'joda-time', name: 'joda-time', version: '2.10.1'
+    compile group: 'org.apache.hadoop', name: 'hadoop-common', version: '3.2.1'
+    compile group: 'org.apache.hadoop', name: 'hadoop-azure', version: '3.2.1'
+    compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
